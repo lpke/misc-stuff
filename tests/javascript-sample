@@ -1,0 +1,96 @@
+import 'styles/global.scss';
+
+let testString = 'hello';
+const testNumber = 69;
+var testBoolean = true;
+let testNothingOne = undefined;
+let testNothingTwo = null;
+
+let testObj = {
+  key: {
+    subValue: 'haha',
+    'quoted subValue': 'woah'
+  },
+  'quoted key': 'value'
+};
+
+console.log(testObj.key.subValue.toUpperCase());
+
+const arrowFcn = () => {
+  testString;
+  testNumber;
+  if (testNumb > 1) { return; }
+};
+
+let testDate = new Date();
+
+arrowFcn(testBoolean);
+
+// example function, and example comment
+function exampleFunction(param) {
+  for (let i = 0; i <= 7; i++) {
+    // nothing yet...
+  }
+  
+  if (/\d.*?[abc]/gi.test(param) === true) {
+    return 'looky that...';
+  }
+}
+
+class ExampleClass extends React.Component {
+  componentDidMount() {
+    console.log('hey look, a thing!');
+  }
+  
+  render() {
+    return (
+      <p className="poop">Nothing!</p>
+    );
+  }
+}
+
+function App({ Component, pageProps }) {
+  
+  return (
+    <>
+      <Component {...pageProps} />
+
+      <div
+        className="something"
+        someProp={exampleFunction('arg')}
+        var={testString}
+      />
+
+      {/* Comment inside JSX */}
+      <p>Hello, I am a HTML paragraph written inside JSX as an example.</p>
+      
+      <footer>
+        <a href="https://lpdev.io" target="_blank">
+          &copy; LPDev {new Date().getFullYear()}
+        </a>
+      </footer>
+
+      <style jsx>{`
+        h1 {
+          color: inherit;
+        }
+
+        .test-div {
+          --test: 1px;
+          border: var(--test) solid blue;
+          color: #ffffff;
+        }
+
+        #test-id:not(:last-of-type) {
+          display: flex;
+        }
+
+        p > .example[class*="something"] {
+          -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.45);
+        }
+      `}</style>
+    </>
+  );
+}
+
+export default ExampleClass;
